@@ -4,18 +4,6 @@ def fscoreCalculation(currentCombined, pastCombined, pastPastCombined, originalT
 
     originalTickers = currentCombined.columns
 
-    stats = ["Net Income available to common shareholders",
-             "Total Assets", 
-             "Operating Cash Flow",
-             "Long Term Debt",
-             "Other Current Liabilities",
-             "Other long-term liabilities",
-             "Total Current Assets",
-             "Total Current Liabilities",
-             "Common Stock",
-             "Total Revenue",
-             "Gross Profit"]
-
     fscore = {}
     for ticker in originalTickers:
 

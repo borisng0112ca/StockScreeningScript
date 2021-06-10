@@ -8,8 +8,8 @@ import index6m
 if __name__ == '__main__':
 
    #stocks to be filtered
-   # startingTickers = ["TSLA", "AAPL", "GOOG", "GME", "PLTR", "AMC", "IBM", "AC.TO", "FB"]
-   startingTickers = ["TSLA", "AAPL", "GOOG", "GME", "PLTR", "AMC",]
+   '''RECOMMENDED: 20 Stocks+'''
+   startingTickers = ["TSLA", "AAPL", "GOOG", "GME", "PLTR", "AMC", "IBM", "AC.TO", "FB"]
 
    #Retreive and store primitive data
    currentData, pastData, pastPastData = webscraping.getFinancialData(startingTickers)

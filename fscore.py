@@ -40,7 +40,9 @@ def fscoreCalculation(currentCombined, pastCombined, pastPastCombined, originalT
     fscore_df['Sum'] =  fscore_df[["PosROA", "PosCFO", "ROAChange", "Accruals", "Leverage", "Liquidity", "Dilution", "GM", "ATO"]].sum(axis=1)
     fscore_df.sort_values(by=["Sum"], inplace = True, ascending=False)
     print('\n',fscore_df)
-    filteredTickers = fscore_df.index
-    filteredTickers = originalTickers[:len(filteredTickers)//3]
 
-    return filteredTickers
+    filteredTickers = fscore_df.index
+    #F-Score Top 40%
+    filteredTickers = originalTickers[:int(len(filteredTickers)//2.5)]
+
+    return list(filteredTickers)

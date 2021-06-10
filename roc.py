@@ -17,8 +17,11 @@ def rocCalculation(currentCombined):
     magic_df["ROC Rank"] = magic_df["Returns On Capital"].rank(ascending=False,na_option='bottom')
     magic_df.sort_values(by=["ROC Rank"], inplace = True)
     print('\n',magic_df.loc[:,["ROC Rank", "Returns On Capital"]])
-    tickers = magic_df.index.values
-    magic_df.drop(magic_df.index[len(tickers)//2:], inplace=True)
 
-    tickers = tickers[:len(tickers) // 3]
-    return tickers
+    tickers = magic_df.index.values
+    #ROC Top 50%
+    tickers = tickers[:len(tickers) // 2]
+
+    # magic_df.drop(magic_df.index[len(tickers)//2:], inplace=True)
+
+    return list(tickers)

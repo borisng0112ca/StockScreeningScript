@@ -22,7 +22,9 @@ def eyCalculation(currentCombined):
     print('\n',magic_df.loc[:, ["EY Rank", "Earnings Yield"]])
 
     tickers = magic_df.index.values
-    magic_df.drop(magic_df.index[len(tickers)//5:], inplace=True)
-    tickers = tickers[:len(tickers)// 4]
+    #Earnings Yield Top 20%
+    tickers = tickers[:len(tickers)//5]
 
-    return tickers
+    # magic_df.drop(magic_df.index[len(tickers)//5:], inplace=True)
+
+    return list(tickers)

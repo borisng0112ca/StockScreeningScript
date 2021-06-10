@@ -8,7 +8,7 @@ import index6m
 if __name__ == '__main__':
 
    #stocks to be filtered
-   '''RECOMMENDED: 20 Stocks+'''
+   '''RECOMMENDED: 20+ Stocks'''
    startingTickers = ["TSLA", "AAPL", "GOOG", "GME", "PLTR", "AMC", "IBM", "AC.TO", "FB"]
 
    #Retreive and store primitive data

@@ -39,7 +39,8 @@ def fscoreCalculation(currentCombined, pastCombined, pastPastCombined, originalT
     fscore_df = fscore_df.transpose()
     fscore_df['Sum'] =  fscore_df[["PosROA", "PosCFO", "ROAChange", "Accruals", "Leverage", "Liquidity", "Dilution", "GM", "ATO"]].sum(axis=1)
     fscore_df.sort_values(by=["Sum"], inplace = True, ascending=False)
-    originalTickers = fscore_df.index
-    originalTickers = originalTickers[:len(originalTickers)//3]
-    
-    return fscore_df, originalTickers
+    print('\n',fscore_df)
+    filteredTickers = fscore_df.index
+    filteredTickers = originalTickers[:len(filteredTickers)//3]
+
+    return filteredTickers

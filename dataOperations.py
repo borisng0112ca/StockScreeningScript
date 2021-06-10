@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def data_cleansing(tickers, currentData, pastData, pastPastData):
     currentCombined = pd.DataFrame(currentData)
     pastCombined = pd.DataFrame(pastData)

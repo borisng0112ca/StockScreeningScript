@@ -1,6 +1,6 @@
 import pandas as pd
 
-def filter1(currentCombined):
+def rocCalculation(currentCombined):
 
     magic_df = pd.DataFrame()
     temp_df = pd.DataFrame()
@@ -16,9 +16,9 @@ def filter1(currentCombined):
             temp_df["Net property, plant and equipment"] + temp_df["Total Current Assets"] - temp_df["Total Current Liabilities"])
     magic_df["ROC Rank"] = magic_df["Returns On Capital"].rank(ascending=False,na_option='bottom')
     magic_df.sort_values(by=["ROC Rank"], inplace = True)
-    print(magic_df.loc[:,["ROC Rank", "Returns On Capital"]])
+    print('\n',magic_df.loc[:,["ROC Rank", "Returns On Capital"]])
     tickers = magic_df.index.values
     magic_df.drop(magic_df.index[len(tickers)//2:], inplace=True)
-    tickers = tickers[:len(tickers) // 3]
 
-    return magic_df, tickers
+    tickers = tickers[:len(tickers) // 3]
+    return tickers
